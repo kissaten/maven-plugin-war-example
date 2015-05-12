@@ -25,10 +25,7 @@
       <plugin>
         <groupId>com.heroku.sdk</groupId>
         <artifactId>heroku-maven-plugin</artifactId>
-        <version>0.3.7</version>
-        <configuration>
-          <appName>possessed-cemetery-7933</appName>
-        </configuration>
+        <version>0.4.1</version>
       </plugin>
     </plugins>
   </build>
