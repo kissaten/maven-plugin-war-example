@@ -31,11 +31,8 @@
       <plugin>
         <groupId>com.heroku.sdk</groupId>
         <artifactId>heroku-maven-plugin</artifactId>
-        <version>0.4.4</version>
+        <version>0.5.1</version>
         <configuration>
-          <processTypes>
-            <web>java -version</web>
-          </processTypes>
           <includes>
             <include>target/dependency/newrelic-agent.jar</include>
           </includes>
