@@ -12,18 +12,12 @@
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-servlet</artifactId>
-      <version>9.2.11.v20150529</version>
+      <version>9.4.7.v20170914</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.1.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.newrelic.agent.java</groupId>
-      <artifactId>newrelic-agent</artifactId>
-      <version>3.18.0</version>
-      <scope>provided</scope>
     </dependency>
   </dependencies>
   <build>
@@ -31,31 +25,14 @@
       <plugin>
         <groupId>com.heroku.sdk</groupId>
         <artifactId>heroku-maven-plugin</artifactId>
-        <version>1.2.1</version>
+        <version>1.2.5</version>
         <configuration>
-          <includes>
-            <include>target/dependency/newrelic-agent.jar</include>
-          </includes>
+          <buildpacks>
+            <buildpack>heroku/exec</buildpack>
+            <buildpack>heroku/metrics</buildpack>
+            <buildpack>heroku/jvm</buildpack>
+          </buildpacks>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>2.6</version>
-        <executions>
-          <execution>
-            <id>copy-new-relic</id>
-            <phase>package</phase>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-              <includeGroupIds>com.newrelic.agent.java</includeGroupIds>
-              <includeArtifactIds>newrelic-agent</includeArtifactIds>
-              <stripVersion>true</stripVersion>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
