@@ -25,7 +25,7 @@
       <plugin>
         <groupId>com.heroku.sdk</groupId>
         <artifactId>heroku-maven-plugin</artifactId>
-        <version>1.2.5</version>
+        <version>2.0.0</version>
         <configuration>
           <buildpacks>
             <buildpack>heroku/exec</buildpack>
