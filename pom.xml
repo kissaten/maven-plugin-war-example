@@ -25,11 +25,9 @@
       <plugin>
         <groupId>com.heroku.sdk</groupId>
         <artifactId>heroku-maven-plugin</artifactId>
-        <version>2.0.16</version>
+        <version>3.0.1</version>
         <configuration>
           <buildpacks>
-            <buildpack>heroku/exec</buildpack>
-            <buildpack>heroku/metrics</buildpack>
             <buildpack>heroku/jvm</buildpack>
           </buildpacks>
         </configuration>
